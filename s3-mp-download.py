@@ -107,7 +107,6 @@ def main(src, dest, num_processes=2, split=32, force=False, verbose=False, quiet
 
     # Split out the bucket and the key
     s3 = boto.connect_s3()
-    s3 = boto.connect_s3(calling_format=OrdinaryCallingFormat())
     s3.is_secure = secure
     logger.debug("split_rs: %s" % str(split_rs))
     bucket = s3.lookup(split_rs.netloc)
